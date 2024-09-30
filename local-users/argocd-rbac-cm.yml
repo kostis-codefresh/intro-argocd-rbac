@@ -8,6 +8,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   policy.csv: |
-    g, jane, proj:infra:read-only
+    g, jane, proj:team-a:read-write
+    g, jane, proj:team-b:read-only
+    g, david, proj:team-b:read-write        
 
 
