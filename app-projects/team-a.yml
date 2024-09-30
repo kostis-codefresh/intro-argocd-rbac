@@ -5,6 +5,10 @@ metadata:
   namespace: argocd
 spec:
   description: Team A
+  destinations:
+  - name: '*'
+    namespace: '*'
+    server: '*'  
   roles:
   - description: Read Only
     name: read-only
@@ -12,6 +16,8 @@ spec:
     - p, proj:team-a:read-only, applications, get, team-a/*, allow
   - description: Read Write
     name: read-write
+    groups:
+    - jane    
     policies:
     - p, proj:team-a:read-write, applications, get, team-a/*, allow
     - p, proj:team-a:read-write, applications, sync, team-a/*, allow

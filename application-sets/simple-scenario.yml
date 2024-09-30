@@ -9,24 +9,24 @@ spec:
       repoURL: https://github.com/kostis-codefresh/intro-argocd-rbac.git
       revision: HEAD
       directories:
-      - path: apps/*
+      - path: apps/*/*
   template:      
     metadata:
       name: '{{path.basename}}'
     spec:
       # The project the application belongs to.
-      project: default
+      project: '{{index .path.segments 1}}'
 
       # Source of the application manifests
       source:
         repoURL: https://github.com/kostis-codefresh/intro-argocd-rbac.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{.path.path}}'
       
       # Destination cluster and namespace to deploy the application
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: '{{index .path.segments 2}}'
 
       # Sync policy
       syncPolicy:

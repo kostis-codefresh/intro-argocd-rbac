@@ -5,6 +5,10 @@ metadata:
   namespace: argocd
 spec:
   description: Infrastructure resources
+  destinations:
+  - name: '*'
+    namespace: '*'
+    server: '*'  
   roles:
   - description: Read Only
     name: read-only
