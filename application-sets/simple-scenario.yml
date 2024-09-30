@@ -4,6 +4,8 @@ metadata:
   name: simple-scenario
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       repoURL: https://github.com/kostis-codefresh/intro-argocd-rbac.git
@@ -12,9 +14,10 @@ spec:
       - path: apps/*/*
   template:      
     metadata:
-      name: '{{path.basename}}'
+      name: '{{index .path.segments 2}}' 
     spec:
       # The project the application belongs to.
+      # project: '{{index .path.segments 1}}'
       project: '{{index .path.segments 1}}'
 
       # Source of the application manifests
