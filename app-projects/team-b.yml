@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: team-b
+  namespace: argocd
+spec:
+  description: Team B
+  roles:
+  - description: Read Only
+    name: read-only
+    policies:
+    - p, proj:team-b:read-only, applications, get, team-b/*, allow
+  - description: Read Write
+    name: read-write
+    policies:
+    - p, proj:team-b:read-write, applications, get, team-b/*, allow
+    - p, proj:team-b:read-write, applications, sync, team-b/*, allow
+    - p, proj:team-b:read-write, applications, update, team-b/*, allow        
+  sourceRepos:
+  - https://github.com/kostis-codefresh/*

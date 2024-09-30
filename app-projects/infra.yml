@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: infra
+  namespace: argocd
+spec:
+  description: Infrastructure resources
+  roles:
+  - description: Read Only
+    name: read-only
+    policies:
+    - p, proj:infra:read-only, applications, get, infra/*, allow
+  sourceRepos:
+  - https://github.com/kostis-codefresh/*
