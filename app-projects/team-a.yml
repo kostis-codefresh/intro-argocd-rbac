@@ -3,6 +3,8 @@ kind: AppProject
 metadata:
   name: team-a
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io  
 spec:
   description: Team A
   destinations:
