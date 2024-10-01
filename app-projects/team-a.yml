@@ -17,9 +17,7 @@ spec:
     policies:
     - p, proj:team-a:read-only, applications, get, team-a/*, allow
   - description: Read Write
-    name: read-write
-    groups:
-    - jane    
+    name: read-write   
     policies:
     - p, proj:team-a:read-write, applications, get, team-a/*, allow
     - p, proj:team-a:read-write, applications, sync, team-a/*, allow

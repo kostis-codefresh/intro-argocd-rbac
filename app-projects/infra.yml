@@ -11,10 +11,5 @@ spec:
   - name: '*'
     namespace: '*'
     server: '*'  
-  roles:
-  - description: Read Only
-    name: read-only
-    policies:
-    - p, proj:infra:read-only, applications, get, infra/*, allow
   sourceRepos:
   - https://github.com/kostis-codefresh/*

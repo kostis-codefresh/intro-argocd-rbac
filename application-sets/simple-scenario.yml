@@ -17,10 +17,8 @@ spec:
       name: '{{index .path.segments 2}}' 
     spec:
       # The project the application belongs to.
-      # project: '{{index .path.segments 1}}'
       project: '{{index .path.segments 1}}'
 
-      # Source of the application manifests
       source:
         repoURL: https://github.com/kostis-codefresh/intro-argocd-rbac.git
         targetRevision: HEAD
@@ -31,7 +29,6 @@ spec:
         server: https://kubernetes.default.svc
         namespace: '{{index .path.segments 2}}'
 
-      # Sync policy
       syncPolicy:
         syncOptions:
           - CreateNamespace=true  
