@@ -11,7 +11,7 @@ spec:
   - name: '*'
     namespace: '*'
     server: '*'  
-clusterResourceWhitelist:
+  clusterResourceWhitelist:
   - group: ""
     kind: Namespace
   roles:
