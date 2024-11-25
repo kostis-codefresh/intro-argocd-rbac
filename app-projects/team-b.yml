@@ -27,3 +27,4 @@ spec:
     - p, proj:team-b:read-write, applications, update, team-b/*, allow        
   sourceRepos:
   - https://github.com/kostis-codefresh/intro-argocd-rbac.git
+  
