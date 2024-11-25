@@ -7,6 +7,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io  
 spec:
   description: Infrastructure resources
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
   destinations:
   - name: '*'
     namespace: '*'
