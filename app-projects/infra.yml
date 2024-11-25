@@ -10,6 +10,9 @@ spec:
   destinations:
   - name: '*'
     namespace: '*'
-    server: '*'  
+    server: '*'
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
   sourceRepos:
   - https://github.com/kostis-codefresh/*
