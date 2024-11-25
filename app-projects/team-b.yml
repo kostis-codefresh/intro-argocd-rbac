@@ -11,6 +11,9 @@ spec:
   - name: '*'
     namespace: '*'
     server: '*'  
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
   roles:
   - description: Read Only
     name: read-only
