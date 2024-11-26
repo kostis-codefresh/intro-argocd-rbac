@@ -10,6 +10,8 @@ data:
   policy.csv: |
     g, jane, proj:team-a:read-write
     g, jane, proj:team-b:read-only
-    g, david, proj:team-b:read-write        
+    g, david, proj:team-b:read-write
+    p, infra, applications, *, */*, allow
+    p, infra, projects, get, *, allow       
 
 

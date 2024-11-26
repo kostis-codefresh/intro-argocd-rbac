@@ -11,6 +11,9 @@ spec:
   - name: '*'
     namespace: '*'
     server: '*'  
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
   roles:
   - description: Read Only
     name: read-only
@@ -24,3 +27,4 @@ spec:
     - p, proj:team-b:read-write, applications, update, team-b/*, allow        
   sourceRepos:
   - https://github.com/kostis-codefresh/intro-argocd-rbac.git
+  
